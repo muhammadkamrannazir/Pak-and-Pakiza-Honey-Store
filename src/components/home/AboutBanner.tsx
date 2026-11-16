@@ -40,11 +40,11 @@ export function AboutBanner() {
 
             {/* Paragraph Text (Clean & faithful to Dribbble aesthetic) */}
             <p className="text-xs sm:text-sm text-[#381F0E] leading-relaxed font-medium">
-              Pak and Pakiza brings you 100% pure, natural, and raw honey harvested directly from organic beehives in Burewala and across Pakistan. Unheated, cold-extracted, and unadulterated, every drop preserves nature&apos;s living enzymes, wild pollens, and medicinal benefits.
+              Pak and Pakiza brings you honey from Burewala, Pakistan, carefully packed and delivered to families across the country.
             </p>
 
             <p className="text-xs sm:text-sm text-[#381F0E] leading-relaxed font-medium mt-3 hidden sm:block">
-              We take pride in transparent beekeeping and traditional harvesting that honors the sacred purity of pure honey.
+              Choose the jar size that suits your home and enjoy honey in every spoonful.
             </p>
 
             {/* Centered Button: Shop Now */}

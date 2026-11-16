@@ -31,8 +31,8 @@ export default function ContactPage() {
       a: "Our honey is lab-tested in accordance with Codex Alimentarius and PCSIR standards. Sucrose levels are certified below 2% (far below the maximum 5% threshold), moisture is below 18%, and natural diastase enzyme activity is fully active. Every customer is welcome to test our honey in any independent certified food lab."
     },
     {
-      q: "Why does raw pure honey sometimes crystallize or freeze?",
-      a: "Crystallization is the most definitive natural proof of 100% unheated raw honey! Real raw honey contains active natural glucose and microscopic pollen grains. Depending on room temperature, these crystals slowly precipitate, creating a delicious creamy texture. Heated supermarket syrups never crystallize because their natural enzymes have been destroyed."
+      q: "Can honey crystallize over time?",
+      a: "Honey may crystallize naturally over time. This is a normal change in texture and does not mean the honey has gone bad. To soften it, place the closed jar in warm water and avoid overheating."
     },
     {
       q: "How long does delivery take to Lahore, Karachi, or Islamabad?",
@@ -56,7 +56,7 @@ export default function ContactPage() {
             Contact Pak and Pakiza
           </h1>
           <p className="text-xs sm:text-sm text-amber-900/80 mt-2">
-            Have questions about pure raw honey or need bulk/custom orders? Our Burewala team is ready to assist you.
+            Have questions about our honey, jar sizes, or an order? Our Burewala team is ready to assist you.
           </p>
         </div>
 

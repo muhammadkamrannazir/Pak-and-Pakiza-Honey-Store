@@ -10,7 +10,7 @@ export function GallerySection() {
 
   const columns = [
     [
-      { src: "/assets/gallery_honey_comb_jar.png", alt: "Honey with honeycomb slice" },
+      { src: "/assets/gallery_honey_comb_jar.png", alt: "Honey jar" },
       { src: "/assets/gallery_chamomile_honey.png", alt: "Honey jar with chamomile daisies" }
     ],
     [
@@ -18,7 +18,7 @@ export function GallerySection() {
       { src: "/assets/gallery_golden_jar_spoon.png", alt: "Honey jar with spoon" }
     ],
     [
-      { src: "/assets/gallery_fresh_comb_jar.png", alt: "Fresh honeycomb jar" },
+      { src: "/assets/gallery_fresh_comb_jar.png", alt: "Honey jar" },
       { src: "/assets/gallery_wooden_bowl_honey.png", alt: "Wooden bowl with honey dipper" }
     ],
     [
@@ -27,7 +27,7 @@ export function GallerySection() {
     ],
     [
       { src: "/assets/gallery_dark_honey_comb.png", alt: "Dark honey comb harvest" },
-      { src: "/assets/gallery_comb_frame_spread.png", alt: "Honeycomb frame spread" }
+      { src: "/assets/gallery_comb_frame_spread.png", alt: "Honey being served" }
     ]
   ];
 

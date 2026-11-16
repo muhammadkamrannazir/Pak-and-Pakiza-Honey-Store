@@ -28,28 +28,28 @@ const INITIAL_ORDERS: Order[] = [
     },
     items: [
       {
-        productId: "prod-sidr-gold",
-        name: "Pure Sidr (Beri) Honey",
-        sizeLabel: "1000g (1kg)",
-        unitPrice: 4600,
+        productId: "prod-honey",
+        name: "Honey",
+        sizeLabel: "1 kg",
+        unitPrice: 3000,
         quantity: 1,
-        subtotal: 4600,
+        subtotal: 3000,
         image: "/assets/hero_jar_pedestal.png"
       },
       {
-        productId: "prod-pure-honeycomb",
-        name: "Pure Natural Honeycomb (Comb Honey)",
-        sizeLabel: "450g Wooden Tray",
-        unitPrice: 2800,
+        productId: "prod-honey",
+        name: "Honey",
+        sizeLabel: "250 g",
+        unitPrice: 750,
         quantity: 1,
-        subtotal: 2800,
-        image: "/assets/gallery_fresh_comb_jar.png"
+        subtotal: 750,
+        image: "/assets/hero_jar_pedestal.png"
       }
     ],
-    subtotal: 7400,
+    subtotal: 3750,
     deliveryFee: 0,
-    discount: 740,
-    total: 6660,
+    discount: 375,
+    total: 3375,
     paymentMethod: "cod",
     paymentStatus: "cash_on_delivery",
     status: "shipped",
@@ -71,19 +71,19 @@ const INITIAL_ORDERS: Order[] = [
     },
     items: [
       {
-        productId: "prod-wild-forest",
-        name: "Wild Forest (Choti Makhi) Honey",
-        sizeLabel: "500g",
-        unitPrice: 3200,
+        productId: "prod-honey",
+        name: "Honey",
+        sizeLabel: "500 g",
+        unitPrice: 1500,
         quantity: 2,
-        subtotal: 6400,
-        image: "/assets/bestseller_forest.png"
+        subtotal: 3000,
+        image: "/assets/hero_jar_pedestal.png"
       }
     ],
-    subtotal: 6400,
+    subtotal: 3000,
     deliveryFee: 0,
     discount: 0,
-    total: 6400,
+    total: 3000,
     paymentMethod: "jazzcash",
     paymentStatus: "paid",
     status: "delivered",

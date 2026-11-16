@@ -7,31 +7,16 @@ import {
   ShoppingBag,
   Star,
   ShieldCheck,
-  Filter,
-  ArrowUpDown,
-  Check
+  ArrowUpDown
 } from "lucide-react";
-import { PRODUCTS, BRAND_INFO } from "@/data/products";
+import { PRODUCTS } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
 export default function ShopPage() {
   const { addToCart } = useCart();
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [sortBy, setSortBy] = useState<string>("featured");
 
-  const categories = [
-    "All",
-    "Sidr Raw Honey",
-    "Wild Forest Honey",
-    "Raw Honey",
-    "Comb Honey",
-    "Infusions"
-  ];
-
-  const filtered = PRODUCTS.filter((p) => {
-    if (selectedCategory === "All") return true;
-    return p.category === selectedCategory;
-  }).sort((a, b) => {
+  const filtered = [...PRODUCTS].sort((a, b) => {
     if (sortBy === "price-low") return a.pricePKR - b.pricePKR;
     if (sortBy === "price-high") return b.pricePKR - a.pricePKR;
     if (sortBy === "rating") return b.rating - a.rating;
@@ -44,53 +29,29 @@ export default function ShopPage() {
         {/* Header Banner */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-800 bg-amber-100 px-4 py-1.5 rounded-full inline-block mb-3">
-            Pure Raw Harvests from Pakistan
+            Honey • Available Sizes
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-[#2D1A0E] tracking-tight">
             Pak and Pakiza Honey Shop
           </h1>
           <p className="font-script text-xl sm:text-2xl text-amber-700 font-bold mt-1">
-            خالص اور پاکیزہ قدرتی شہد کی تمام اقسام
+            خالص اور پاکیزہ شہد
           </p>
           <p className="text-xs sm:text-sm text-amber-900/75 mt-3 leading-relaxed">
-            Every jar is cold-extracted, unheated, unpasteurized, and lab-tested for absolute purity. Free delivery nationwide on orders above Rs. 3,500.
+            Choose from 1 kg, 500 g, and 250 g jars. Free delivery nationwide on orders above Rs. 3,500.
           </p>
         </div>
 
         {/* Filters and Sorting Bar */}
         <div className="bg-white rounded-2xl p-4 sm:p-5 border border-amber-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-          {/* Category Tabs */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-            <span className="text-xs font-bold text-amber-900 uppercase tracking-wider mr-2 hidden sm:inline-flex items-center gap-1">
-              <Filter className="w-3.5 h-3.5 text-amber-700" /> Filter:
-            </span>
-            {categories.map((cat) => {
-              const active = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                    active
-                      ? "bg-amber-500 text-[#2D1A0E] shadow-xs"
-                      : "bg-[#FAF7F2] text-amber-900 hover:bg-amber-100"
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Sort Selector */}
-          <div className="flex items-center gap-2 w-full md:w-auto justify-end">
+          <div className="flex items-center gap-2 w-full md:w-auto justify-end md:ml-auto">
             <ArrowUpDown className="w-4 h-4 text-amber-700" />
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               className="bg-[#FAF7F2] border border-amber-200 text-xs font-bold text-[#2D1A0E] rounded-xl px-3 py-2 outline-none focus:border-amber-500 cursor-pointer"
             >
-              <option value="featured">Featured Varieties</option>
+              <option value="featured">Honey</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="rating">Highest Rated</option>
@@ -101,7 +62,7 @@ export default function ShopPage() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filtered.map((product) => {
-            const defaultSize = product.sizes[1] || product.sizes[0];
+            const defaultSize = product.sizes[0];
             return (
               <div
                 key={product.id}
@@ -125,7 +86,7 @@ export default function ShopPage() {
                       </span>
                     )}
                     <span className="absolute bottom-3 right-3 bg-white/90 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-md border border-emerald-200 flex items-center gap-1">
-                      <ShieldCheck className="w-3 h-3 text-emerald-600" /> 100% Raw
+                      <ShieldCheck className="w-3 h-3 text-emerald-600" /> Honey
                     </span>
                   </Link>
 
@@ -154,14 +115,14 @@ export default function ShopPage() {
                     {product.tagline}
                   </p>
 
-                  {/* Size options preview */}
-                  <div className="flex flex-wrap gap-1.5 mt-3">
+                  <div className="grid grid-cols-3 gap-1.5 mt-3">
                     {product.sizes.map((s) => (
                       <span
                         key={s.label}
-                        className="text-[10px] bg-amber-50 text-amber-900 font-semibold px-2 py-0.5 rounded-md border border-amber-200/60"
+                        className="text-[10px] bg-amber-50 text-amber-900 font-semibold px-2 py-1.5 rounded-md border border-amber-200/60 text-center"
                       >
                         {s.label}
+                        <span className="block mt-0.5">Rs. {s.pricePKR.toLocaleString()}</span>
                       </span>
                     ))}
                   </div>
@@ -191,7 +152,7 @@ export default function ShopPage() {
                       className="px-4 py-2.5 rounded-full honey-gold-btn text-xs font-bold flex items-center gap-1.5 shadow-sm hover:scale-105 transition-all"
                     >
                       <ShoppingBag className="w-3.5 h-3.5" />
-                      <span>Add</span>
+                      <span>Add 1 kg</span>
                     </button>
                     <Link
                       href={`/product/${product.slug}`}

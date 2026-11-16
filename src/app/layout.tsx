@@ -29,21 +29,17 @@ const scriptFont = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pakandpakiza.com"),
   title: {
-    default: "Pak and Pakiza | 100% Pure, Raw & Organic Natural Honey Pakistan",
+    default: "Pak and Pakiza | Pure Honey Pakistan",
     template: "%s | Pak and Pakiza Honey"
   },
   description:
-    "Buy 100% Pure, Unpasteurized Sidr (Beri) Honey, Wild Forest Choti Makhi, and Raw Honeycomb from Burewala, Pakistan. Cash on delivery nationwide. WhatsApp: +92 329 1384005",
+    "Buy Pak and Pakiza Honey from Burewala, Pakistan. Available in 1 kg, 500 g, and 250 g sizes with cash on delivery nationwide. WhatsApp: +92 329 1384005",
   keywords: [
     "Pak and Pakiza",
     "pure honey Pakistan",
-    "Sidr honey",
-    "Beri honey",
-    "Choti Makhi honey",
     "Burewala honey",
-    "raw honey online",
-    "honeycomb Pakistan",
-    "organic honey",
+    "honey online",
+    "pure honey Pakistan",
     "Pakistani honey store"
   ],
   authors: [{ name: "Pak and Pakiza Pure Honey" }],
@@ -51,9 +47,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_PK",
     url: "https://pakandpakiza.com",
-    title: "Pak and Pakiza — 100% Pure Raw & Natural Honey",
+    title: "Pak and Pakiza — Pure Honey",
     description:
-      "Cold-extracted unpasteurized Sidr Beri, Wild Forest Choti Makhi, and Acacia honey from Burewala, Pakistan. 100% lab tested purity.",
+      "Pak and Pakiza Honey from Burewala, Pakistan. Choose 1 kg, 500 g, or 250 g jars.",
     siteName: "Pak and Pakiza Pure Honey",
     images: [
       {
@@ -67,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pak and Pakiza | Pure Honey Pakistan",
-    description: "100% Pure Raw Honey from Burewala. Sidr Beri, Wild Forest & Honeycomb. Cash on delivery nationwide.",
+    description: "Pak and Pakiza Honey from Burewala in 1 kg, 500 g, and 250 g sizes. Cash on delivery nationwide.",
     images: ["/assets/hero_jar_pedestal.png"]
   },
   robots: {
@@ -97,7 +93,7 @@ export default function RootLayout({
     url: "https://pakandpakiza.com",
     telephone: BRAND_INFO.phone,
     email: BRAND_INFO.email,
-    priceRange: "PKR 950 - PKR 7000",
+    priceRange: "PKR 750 - PKR 3000",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Main Apiary & Store",

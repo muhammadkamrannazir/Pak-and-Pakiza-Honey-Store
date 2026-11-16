@@ -6,17 +6,17 @@ export function TestimonialsSection() {
     {
       name: "LOIS LANE",
       role: "Verified Buyer",
-      text: "Mashallah, the pure honey quality is unmatched! The Sidr honey has that authentic thick consistency and rich butterscotch aroma you cannot find anywhere else in the market."
+      text: "Mashallah, the honey quality is unmatched! It tastes delicious and arrived carefully packaged."
     },
     {
       name: "CLARK KENT",
       role: "Verified Buyer",
-      text: "Ordered the Wild Forest Choti Makhi honey and received it within 2 days in Lahore. Extremely well-packaged with bubble wrap and tastes 100% natural and unheated."
+      text: "Ordered honey and received it within 2 days in Lahore. It was well packaged and tastes delicious."
     },
     {
       name: "HOLLY GOLIGHTLY",
       role: "Verified Buyer",
-      text: "The pure honeycomb tray is an absolute delight for breakfast. You can feel the real natural beeswax and fresh raw honey oozing out. Highly recommended brand!"
+      text: "The honey is a delight at breakfast. The quality and packaging are excellent. Highly recommended!"
     }
   ];
 

@@ -13,15 +13,13 @@ import {
   Sparkles,
   Phone,
   CheckCircle2,
-  FileText,
-  MapPin,
   ChevronRight,
   Plus,
   Minus
 } from "lucide-react";
 import { HoneyProduct, SizeOption } from "@/types";
 import { useCart } from "@/context/CartContext";
-import { BRAND_INFO, PRODUCTS } from "@/data/products";
+import { BRAND_INFO } from "@/data/products";
 
 export function ProductDetailClient({ product }: { product: HoneyProduct }) {
   const router = useRouter();
@@ -29,8 +27,7 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
   const [selectedImage, setSelectedImage] = useState(product.image);
   const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState<"benefits" | "harvest" | "lab" | "reviews">("benefits");
-  const [labModalOpen, setLabModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"benefits" | "harvest" | "reviews">("benefits");
 
   const currentSize: SizeOption = product.sizes[selectedSizeIndex] || product.sizes[0];
   const totalPrice = currentSize.pricePKR * quantity;
@@ -39,8 +36,6 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
     addToCart(product, currentSize, quantity);
     router.push("/checkout");
   };
-
-  const related = PRODUCTS.filter((p) => p.id !== product.id).slice(0, 3);
 
   return (
     <div className="bg-[#FAF7F2] min-h-screen py-8 sm:py-14">
@@ -80,13 +75,6 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
                 </span>
               )}
 
-              <button
-                onClick={() => setLabModalOpen(true)}
-                className="absolute bottom-4 left-4 bg-white/90 hover:bg-white text-amber-900 text-[11px] font-bold px-3 py-1.5 rounded-full border border-amber-300 shadow-sm flex items-center gap-1.5 transition-all"
-              >
-                <FileText className="w-3.5 h-3.5 text-amber-700" />
-                <span>View Lab Report</span>
-              </button>
             </div>
 
             {/* Thumbnail Strip */}
@@ -127,7 +115,7 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
                 </span>
                 <span className="text-amber-300">•</span>
                 <span className="text-xs font-bold text-emerald-700 flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> 100% Raw Certified
+                  <CheckCircle2 className="w-3.5 h-3.5" /> Three Sizes Available
                 </span>
               </div>
 
@@ -291,9 +279,8 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
           {/* Tab Navigation */}
           <div className="flex flex-wrap items-center gap-3 border-b border-amber-200 pb-4">
             {[
-              { id: "benefits", label: "Health & Sunnah Benefits" },
-              { id: "harvest", label: "Floral Source & Texture" },
-              { id: "lab", label: "Purity Lab Test Report" },
+              { id: "benefits", label: "About Our Honey" },
+              { id: "harvest", label: "Product Details" },
               { id: "reviews", label: `Customer Reviews (${product.reviews.length})` }
             ].map((tab) => (
               <button
@@ -315,7 +302,7 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
             {activeTab === "benefits" && (
               <div className="space-y-4">
                 <h3 className="font-serif text-xl font-bold text-[#2D1A0E]">
-                  Proven Medicinal &amp; Sunnah Benefits
+                  About Our Honey
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {product.healthBenefits.map((b, idx) => (
@@ -338,7 +325,7 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
             {activeTab === "harvest" && (
               <div className="space-y-4 max-w-2xl">
                 <h3 className="font-serif text-xl font-bold text-[#2D1A0E]">
-                  Floral Origin &amp; Sensory Profile
+                  Product Details
                 </h3>
                 <div className="space-y-3 text-xs sm:text-sm text-amber-950">
                   <p>
@@ -351,34 +338,8 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
                     <strong>Viscosity &amp; Tasting Notes:</strong> {product.textureAndAroma}
                   </p>
                   <p className="text-amber-900/80 leading-relaxed pt-2">
-                    💡 <em>Note on crystallization:</em> Real raw honey contains active pollens and natural glucose crystals. Depending on ambient room temperature, raw honey can naturally crystallize into a rich creamy butter. This is a scientific hallmark of 100% untampered raw honey!
+                    Honey may crystallize naturally over time. This is a normal change in texture and does not mean the honey has gone bad.
                   </p>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "lab" && (
-              <div className="space-y-6 max-w-xl">
-                <h3 className="font-serif text-xl font-bold text-[#2D1A0E]">
-                  Codex Alimentarius Lab Purity Report
-                </h3>
-                <div className="bg-[#FAF7F2] rounded-2xl p-5 border border-amber-200 space-y-3">
-                  <div className="flex justify-between text-xs sm:text-sm border-b border-amber-200 pb-2">
-                    <span className="font-medium text-amber-900">Total Nectar Purity:</span>
-                    <strong className="text-emerald-700">{product.labReport.purityPercentage}</strong>
-                  </div>
-                  <div className="flex justify-between text-xs sm:text-sm border-b border-amber-200 pb-2">
-                    <span className="font-medium text-amber-900">Sucrose Sugar Level:</span>
-                    <strong className="text-emerald-700">{product.labReport.sucroseLevel}</strong>
-                  </div>
-                  <div className="flex justify-between text-xs sm:text-sm border-b border-amber-200 pb-2">
-                    <span className="font-medium text-amber-900">Moisture Content:</span>
-                    <strong className="text-emerald-700">{product.labReport.moistureContent}</strong>
-                  </div>
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="font-medium text-amber-900">Live Diastase / Enzyme Status:</span>
-                    <strong className="text-emerald-700">{product.labReport.hda10Status}</strong>
-                  </div>
                 </div>
               </div>
             )}
@@ -425,111 +386,7 @@ export function ProductDetailClient({ product }: { product: HoneyProduct }) {
           </div>
         </div>
 
-        {/* Related Honeys */}
-        <div className="mt-16">
-          <h3 className="font-serif text-2xl font-black text-[#2D1A0E] mb-6 text-center">
-            You May Also Love
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {related.map((rel) => (
-              <Link
-                key={rel.id}
-                href={`/product/${rel.slug}`}
-                className="bg-white rounded-3xl p-5 border border-amber-200/80 hover:border-amber-400 honey-card-shadow transition-all group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative aspect-square w-full rounded-2xl bg-[#FAF7F2] p-4 flex items-center justify-center overflow-hidden mb-3">
-                    <Image
-                      src={rel.image}
-                      alt={rel.name}
-                      fill
-                      className="object-contain p-2 group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                  <h4 className="font-serif text-base font-bold text-[#2D1A0E] group-hover:text-amber-800 transition-colors">
-                    {rel.name}
-                  </h4>
-                  <p className="text-xs text-amber-800/70 mt-1 line-clamp-1">
-                    {rel.tagline}
-                  </p>
-                </div>
-                <div className="mt-4 pt-3 border-t border-amber-100 flex items-center justify-between">
-                  <span className="text-sm font-black text-amber-700">
-                    Rs. {rel.pricePKR.toLocaleString()}
-                  </span>
-                  <span className="text-xs font-bold text-[#2D1A0E] group-hover:underline">
-                    View Honey →
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
-
-      {/* Lab Report Modal */}
-      {labModalOpen && (
-        <div
-          onClick={() => setLabModalOpen(false)}
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-[#FAF7F2] rounded-3xl p-6 sm:p-8 max-w-lg w-full border-2 border-amber-400 shadow-2xl relative"
-          >
-            <div className="flex items-center justify-between border-b border-amber-200 pb-4">
-              <div>
-                <span className="text-[10px] font-bold text-amber-800 uppercase tracking-widest block">
-                  Official Quality Certificate
-                </span>
-                <h3 className="font-serif text-xl font-black text-[#2D1A0E]">
-                  Lab Purity Verification
-                </h3>
-              </div>
-              <button
-                onClick={() => setLabModalOpen(false)}
-                className="p-1.5 rounded-full hover:bg-amber-200 text-amber-900"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="my-5 space-y-3 text-xs sm:text-sm text-amber-950">
-              <div className="p-3 rounded-xl bg-white border border-amber-200 flex justify-between">
-                <span>Sample Name:</span>
-                <strong>{product.name}</strong>
-              </div>
-              <div className="p-3 rounded-xl bg-white border border-amber-200 flex justify-between">
-                <span>Origin:</span>
-                <strong>{product.harvestLocation}</strong>
-              </div>
-              <div className="p-3 rounded-xl bg-white border border-amber-200 flex justify-between">
-                <span>Floral Nectar:</span>
-                <strong>{product.floralSource}</strong>
-              </div>
-              <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex justify-between text-emerald-900">
-                <span>Purity Status:</span>
-                <strong>{product.labReport.purityPercentage} (100% Raw)</strong>
-              </div>
-              <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex justify-between text-emerald-900">
-                <span>Added Sucrose / Syrups:</span>
-                <strong>{product.labReport.sucroseLevel} (Zero Added Sugar)</strong>
-              </div>
-            </div>
-
-            <p className="text-[11px] text-amber-900/70 text-center leading-relaxed">
-              Tested under PCSIR / Codex Alimentarius standards for unheated raw Pakistani bee honey.
-            </p>
-
-            <button
-              onClick={() => setLabModalOpen(false)}
-              className="mt-6 w-full py-2.5 rounded-full honey-gold-btn text-xs font-bold"
-            >
-              Close Certificate
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

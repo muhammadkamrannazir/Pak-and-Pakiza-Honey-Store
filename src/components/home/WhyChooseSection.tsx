@@ -23,11 +23,11 @@ export function WhyChooseSection() {
             <div className="w-10 h-1 bg-[#EFA526] rounded-full mt-1.5 mb-5" />
 
             <p className="text-xs sm:text-sm text-[#FDE8C7]/85 leading-relaxed font-normal max-w-xl">
-              Unlike commercial honeys that undergo ultra-filtration and excessive heating—destroying delicate vitamins, minerals, and live enzymes—Pak and Pakiza raw honey is extracted gently straight from hive frames. We preserve 100% of the active antibacterial properties, wild flower nectar, and natural sweetness without ever adding syrups or preservatives.
+              Pak and Pakiza Honey is carefully packed in Burewala and delivered to families across Pakistan. Choose from three convenient sizes for your home.
             </p>
 
             <p className="text-xs sm:text-sm text-[#FDE8C7]/85 leading-relaxed font-normal max-w-xl mt-3 hidden sm:block">
-              Every jar is lab-verified for low sucrose and natural enzyme integrity, delivering genuine wellness in every golden spoonful.
+              Each jar is sealed for safe delivery and ready to enjoy with your favorite meals and drinks.
             </p>
           </div>
 
@@ -38,7 +38,7 @@ export function WhyChooseSection() {
               <div className="absolute top-0 left-0 w-44 sm:w-56 h-44 sm:h-56 rounded-full overflow-hidden border-2 border-amber-300/40 shadow-2xl z-10">
                 <Image
                   src="/assets/circle_honeycomb_bees.png"
-                  alt="Bee on honeycomb and flower"
+                  alt="Bee collecting nectar"
                   fill
                   className="object-cover"
                   priority

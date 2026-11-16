@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.name} — 100% Pure Raw Honey`,
+    title: `${product.name} | Pak and Pakiza Honey`,
     description: product.description.slice(0, 160),
     openGraph: {
       title: `${product.name} | Pak and Pakiza Honey`,
@@ -63,8 +63,8 @@ export default async function ProductPage({ params }: Props) {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "PKR",
-      lowPrice: product.pricePKR,
-      highPrice: product.sizes[product.sizes.length - 1].pricePKR,
+      lowPrice: Math.min(...product.sizes.map((size) => size.pricePKR)),
+      highPrice: Math.max(...product.sizes.map((size) => size.pricePKR)),
       offerCount: product.sizes.length,
       availability: "https://schema.org/InStock"
     },

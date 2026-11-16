@@ -363,7 +363,7 @@ export default function AdminPage() {
 
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between border-b border-amber-200/60 pb-1.5">
-                      <span>Base 500g Price:</span>
+                      <span>Starting Price:</span>
                       <strong className="text-amber-800">
                         Rs. {prod.pricePKR.toLocaleString()}
                       </strong>

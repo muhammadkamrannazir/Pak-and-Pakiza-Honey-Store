@@ -68,7 +68,7 @@ export default function CartPage() {
             Shopping Cart
           </h1>
           <p className="text-xs sm:text-sm text-amber-900/70 mt-1">
-            Review your pure raw honey selection before checkout.
+            Review your honey and selected jar sizes before checkout.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function CartPage() {
               Your Cart is Empty
             </h2>
             <p className="text-xs text-amber-900/70">
-              Discover our cold-extracted Sidr, Choti Makhi, and Honeycomb straight from Burewala.
+              Choose a jar size and enjoy Pak and Pakiza Honey.
             </p>
             <Link
               href="/shop"
@@ -197,7 +197,7 @@ export default function CartPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs">
                 <div className="p-3 bg-white rounded-2xl border border-amber-200/80">
                   <ShieldCheck className="w-4 h-4 text-emerald-700 mx-auto mb-1" />
-                  <span className="font-bold text-[#2D1A0E]">100% Raw Guaranteed</span>
+                  <span className="font-bold text-[#2D1A0E]">Honey Quality</span>
                 </div>
                 <div className="p-3 bg-white rounded-2xl border border-amber-200/80">
                   <Truck className="w-4 h-4 text-amber-700 mx-auto mb-1" />

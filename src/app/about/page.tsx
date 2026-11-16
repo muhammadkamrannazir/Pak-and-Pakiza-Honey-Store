@@ -1,22 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ShieldCheck,
-  Award,
-  Heart,
-  Truck,
-  CheckCircle2,
-  Sparkles,
-  MapPin,
-  Phone
-} from "lucide-react";
-import { BRAND_INFO } from "@/data/products";
+import { CheckCircle2 } from "lucide-react";
+import { BRAND_INFO, PRODUCTS } from "@/data/products";
 
 export const metadata = {
-  title: "About Our Pure Honey Farm — Pak and Pakiza Burewala",
+  title: "About Pak and Pakiza Honey — Burewala",
   description:
-    "Learn about Pak and Pakiza's authentic beekeeping tradition in Burewala, Punjab. 100% cold-extracted, unheated raw honey with zero artificial sugars."
+    "Learn about Pak and Pakiza Honey from Burewala, Punjab."
 };
 
 export default function AboutPage() {
@@ -26,7 +17,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-800 bg-amber-100 px-4 py-1.5 rounded-full inline-block mb-3">
-            Pure Raw Beekeeping • Burewala, Pakistan
+            Honey from Burewala, Pakistan
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-black text-[#2D1A0E] tracking-tight leading-tight">
             Our Story — The Purity of Pak and Pakiza
@@ -35,7 +26,7 @@ export default function AboutPage() {
             خالص اور پاکیزہ قدرتی شہد — فطرت کا انمول تحفہ
           </p>
           <p className="text-xs sm:text-sm text-amber-900/80 mt-4 leading-relaxed">
-            Pak and Pakiza was born in Burewala, District Vehari, with a single steadfast mission: to deliver 100% genuine, unpasteurized, cold-extracted honey straight from organic beehives to Pakistani families without a single drop of adulteration.
+            Pak and Pakiza was born in Burewala, District Vehari, with a simple mission: to bring honey to Pakistani families in convenient jar sizes.
           </p>
         </div>
 
@@ -69,96 +60,62 @@ export default function AboutPage() {
               In Urdu, <em>Pak</em> and <em>Pakiza</em> signify pristine purity, honesty, and sacred cleanliness. For centuries, honey has held an exalted station in Islamic sunnah as both profound nourishment and shifa (healing).
             </p>
             <p className="text-xs sm:text-sm text-amber-900/80 leading-relaxed">
-              Tragically, modern commercial stores are flooded with heated, ultra-filtered corn syrups marketed as honey. At Pak and Pakiza, our bees forage exclusively on natural wildflowers and uncultivated blooms. We never heat our honey above hive temperatures, preserving its living enzymes, rich floral aromas, and delicate health benefits.
+              We carefully pack our honey in Burewala and deliver it to families across Pakistan. Choose from three jar sizes to suit your household.
             </p>
 
             <div className="pt-2 grid grid-cols-2 gap-3 text-xs font-bold text-amber-950">
               <div className="p-3 bg-white rounded-2xl border border-amber-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-700" />
-                <span>Zero Heat Processing</span>
+                <span>Three Jar Sizes</span>
               </div>
               <div className="p-3 bg-white rounded-2xl border border-amber-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-700" />
-                <span>Zero Sugar Syrups</span>
+                <span>Carefully Packed</span>
               </div>
               <div className="p-3 bg-white rounded-2xl border border-amber-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-700" />
-                <span>Retains Live Pollen</span>
+                <span>Nationwide Delivery</span>
               </div>
               <div className="p-3 bg-white rounded-2xl border border-amber-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-700" />
-                <span>Rich in Propolis</span>
+                <span>Easy Online Ordering</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Seasonal Migration Section */}
+        {/* Honey Sizes */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-amber-200/90 honey-card-shadow mb-16">
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-amber-800 bg-amber-100 px-3.5 py-1 rounded-full mb-2 inline-block">
-              Following the Floral Seasons
+              Available Sizes
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-black text-[#2D1A0E]">
-              Our Migratory Beekeeping Journey
+              Choose Your Jar Size
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200">
-              <span className="text-xs font-black text-amber-700 block mb-1">
-                SEASON 01 • SPRING
-              </span>
-              <h3 className="font-serif text-base font-bold text-[#2D1A0E]">
-                Orange Blossom Groves
-              </h3>
-              <p className="text-xs text-amber-900/70 mt-2">
-                Sargodha citrus orchards in full bloom, gathering delicate fragrant citrus nectar.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200">
-              <span className="text-xs font-black text-amber-700 block mb-1">
-                SEASON 02 • EARLY SUMMER
-              </span>
-              <h3 className="font-serif text-base font-bold text-[#2D1A0E]">
-                Acacia Blossoms
-              </h3>
-              <p className="text-xs text-amber-900/70 mt-2">
-                Himalayan foothills and Swat valleys, gathering crystal-clear mild Acacia honey.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200">
-              <span className="text-xs font-black text-amber-700 block mb-1">
-                SEASON 03 • LATE AUTUMN
-              </span>
-              <h3 className="font-serif text-base font-bold text-[#2D1A0E]">
-                Sidr (Beri) Harvest
-              </h3>
-              <p className="text-xs text-amber-900/70 mt-2">
-                Potohar and Karak mountains, harvesting thick, dark amber medicinal Beri honey.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200">
-              <span className="text-xs font-black text-amber-700 block mb-1">
-                SEASON 04 • WINTER
-              </span>
-              <h3 className="font-serif text-base font-bold text-[#2D1A0E]">
-                Burewala Home Apiary
-              </h3>
-              <p className="text-xs text-amber-900/70 mt-2">
-                Bees rest on pure honey reserves in Burewala hives, nourished naturally for the next cycle.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {PRODUCTS[0].sizes.map((size) => (
+              <div
+                key={size.label}
+                className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200 text-center"
+              >
+                <h3 className="font-serif text-xl font-bold text-[#2D1A0E]">
+                  {size.label}
+                </h3>
+                <p className="text-sm font-bold text-amber-800 mt-2">
+                  Rs. {size.pricePKR.toLocaleString()}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-center text-[#2D1A0E] shadow-xl">
           <h2 className="font-serif text-2xl sm:text-4xl font-black">
-            Experience Pure Honey As Nature Intended
+            Enjoy Pak and Pakiza Honey
           </h2>
           <p className="text-xs sm:text-sm text-[#2D1A0E]/80 max-w-xl mx-auto mt-2 font-medium">
             Order online with Cash on Delivery nationwide, or message us directly on WhatsApp.

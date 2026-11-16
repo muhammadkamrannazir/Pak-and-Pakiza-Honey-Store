@@ -139,7 +139,7 @@ export function CartDrawer() {
                     Your cart is sweet & empty
                   </h3>
                   <p className="text-xs text-amber-800/70 mt-1 max-w-xs">
-                    Treat yourself or your loved ones with 100% pure raw honey from our Burewala hives.
+                    Treat yourself or your loved ones to Pak and Pakiza Honey.
                   </p>
                 </div>
                 <Link

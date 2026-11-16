@@ -31,7 +31,7 @@ export function HeroSection() {
           <path d="M 95, 125 C 80, 115 65, 125 75, 140 C 85, 150 100, 140 95, 125 Z" fill="#8C6D46" fillOpacity="0.08" />
           <path d="M 85, 133 Q 75, 135 75, 140" />
           <path d="M 70, 148 C 50, 145 45, 160 55, 170 C 65, 180 80, 165 70, 148 Z" fill="#8C6D46" fillOpacity="0.08" />
-          {/* Side wildflower branch */}
+          {/* Side floral branch */}
           <path d="M 140, 70 Q 110, 45 90, 40" />
           <circle cx="85" cy="38" r="4" fill="#8C6D46" fillOpacity="0.15" />
           <circle cx="95" cy="48" r="3" fill="#8C6D46" fillOpacity="0.15" />
@@ -67,7 +67,7 @@ export function HeroSection() {
           <path d="M 75, 75 C 95, 65 110, 75 105, 90 C 95, 105 80, 95 75, 75 Z" fill="#8C6D46" fillOpacity="0.08" />
           <path d="M 90, 80 Q 98, 85 105, 90" />
           <path d="M 95, 110 C 115, 105 125, 120 120, 135 C 110, 145 95, 130 95, 110 Z" fill="#8C6D46" fillOpacity="0.08" />
-          {/* Side wildflower branch */}
+          {/* Side floral branch */}
           <path d="M 75, 75 Q 70, 110 55, 130" />
           <circle cx="50" cy="135" r="4" fill="#8C6D46" fillOpacity="0.15" />
           <circle cx="62" cy="125" r="3" fill="#8C6D46" fillOpacity="0.15" />
@@ -111,7 +111,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Center Stage: Wooden Slab Pedestal + Honey Jar with Honeycomb & Dipper */}
+          {/* Center Stage: Wooden Slab Pedestal + Honey Jar and Dipper */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square flex items-center justify-center">
               <div className="relative w-full h-full">

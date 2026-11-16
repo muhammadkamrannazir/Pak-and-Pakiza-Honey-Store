@@ -1,5 +1,5 @@
 export interface SizeOption {
-  label: string; // e.g., "250g", "500g", "1kg", "450g Comb"
+  label: string; // e.g., "250 g", "500 g", "1 kg"
   weightGrams: number;
   pricePKR: number;
   originalPricePKR?: number;
@@ -22,8 +22,8 @@ export interface HoneyProduct {
   name: string;
   urduName: string;
   tagline: string;
-  category: "Sidr Raw Honey" | "Wild Forest Honey" | "Raw Honey" | "Comb Honey" | "Infusions";
-  categoryTab: "All Honey" | "Raw Honey" | "Comb Honey" | "Specialty";
+  category: "Honey";
+  categoryTab: "All Honey";
   isBestSeller?: boolean;
   isFeatured?: boolean;
   badge?: string;
@@ -42,12 +42,6 @@ export interface HoneyProduct {
   floralSource: string;
   textureAndAroma: string;
   healthBenefits: string[];
-  labReport: {
-    purityPercentage: string;
-    sucroseLevel: string;
-    moistureContent: string;
-    hda10Status: string;
-  };
   reviews: Review[];
 }
 
